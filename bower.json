@@ -1,0 +1,16 @@
+{
+  "name": "fussballfans",
+  "version": "0.0.0",
+  "dependencies":{
+    
+    
+    "bootstrap": "~3.0.3",
+    "fontawesome": "~4.0.3",
+    "respond": "~1.4.2",
+    
+    
+    "modernizr": "~2.6.2",
+    "jquery": "~1.9.0"    
+  }
+}
+

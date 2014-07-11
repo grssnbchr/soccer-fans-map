@@ -1,0 +1,37 @@
+<!-- Analytics -->
+<div id="analytics">
+<script type="text/javascript">
+	// ACHTUNG: Tages-Anzeiger only, keine Partnerwebsites!
+	// Google Analytics
+	var gaJsHost = (("https:" == document.location.protocol) ? "https:// ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	if (typeof(_gat) == 'object') {
+		var pageTracker = _gat._getTracker(newsnet.gavar);
+		pageTracker._setDomainName(newsnet.ga_domainname);
+		pageTracker._initData();
+		pageTracker._trackPageview();
+		var secondTracker = _gat._getTracker("UA-431029-7");
+		secondTracker._setDomainName("none");
+		secondTracker._setAllowLinker(true);
+		secondTracker._initData();
+		secondTracker._trackPageview();
+	}
+
+	/*var userAgentString = navigator.userAgent.toLocaleLowerCase();
+	if(userAgentString.indexOf('ipad') > -1 || (userAgentString.indexOf('android') > -1 && userAgentString.indexOf('mobile') < 0)) {
+	// Tablet
+	WEMF = "http://" + wemfvar + ".wemfbox.ch/cgi-bin/ivw/CP/mobile/tablet/web/";
+	WEMF2 = "http://newsnetz.wemfbox.ch/cgi-bin/ivw/CP/tagesanz/mobile/tablet/web/";
+
+	}
+	else if ( /Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgentString) ) {
+	// Phone
+	WEMF = "http://tagesanz.wemfbox.ch/cgi-bin/ivw/CP/mobile/phone/mobilesite/webapp/";
+	WEMF2 = "http://newsnetz.wemfbox.ch/cgi-bin/ivw/CP/tagesanz/mobile/phone/mobilesite/webapp/";
+	}*/
+
+	document.write("<img src='"+ newsnet.WEMF +"interactive/sfl-fussballfans?r="+escape(document.referrer)+"&amp;d="+(Math.random()*100000)+"' width='1' height='1' alt='' />");
+	document.write("<img src='"+ newsnet.WEMF2 +"interactive/sfl-fussballfans?r="+escape(document.referrer)+"&amp;d="+(Math.random()*100000)+" ' width='1' height='1' alt='' />");
+</script>
+<!-- Analytics Ende -->
+</div>
