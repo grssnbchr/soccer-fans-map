@@ -37,7 +37,22 @@
     }
 }());
 
-
+/* GOOGLE MAPS POPUP FIX */
+(function() {
+    //Here we redefine set() method.
+    //If it is called for map option, we hide InfoWindow, if "noSupress" option isnt true.
+    //As Google doesn't know about this option, its InfoWindows will not be opened.
+    var set = google.maps.InfoWindow.prototype.set;
+    google.maps.InfoWindow.prototype.set = function (key, val) {
+        if (key === 'map') {
+            if (!this.get('noSupress')) {
+                console.log('This InfoWindow is supressed. To enable it, set "noSupress" option to true');
+                return;
+            }
+        }
+        set.apply(this, arguments);
+    }
+})();
 /* GLOBAL PARAMETERS */
 var VIZAPI = 'http://wnstnsmth.cartodb.com/api/v2/viz/649eafa8-0901-11e4-99f0-0e10bcd91c2b/viz.json';
 /* NAMESPACES */
