@@ -59,127 +59,144 @@
 </head>
 
 <body>
-    <!-- Folgendes wird vorerst nicht eingesetzt - tg., 28.03.2014 -->
-    <!--[if lt IE 8]>-->
-    <!--    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>-->
-    <!-- <![endif]-->
+    <div class="content">
+        <!-- Folgendes wird vorerst nicht eingesetzt - tg., 28.03.2014 -->
+        <!--[if lt IE 8]>-->
+        <!--    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>-->
+        <!-- <![endif]-->
 
-    <header>
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#" data-toggle="modal" data-target="#impressum" class="impressum-link">
-                                Impressum
+        <header>
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="container">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#impressum" class="impressum-link">
+                                Über die Karte
                         </a>
-                    </li>
-                    <li>
-                        <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=" target="_blank">&#xf082</a>
-                    </li>
-                    <li>
-                        <a class="twitter" href="https://twitter.com/home?status=" target="_blank">&#xf099</a>
-                    </li>
-                </ul>
-                <div class="navbar-header">
-                    <a class="navbar-brand logo" href=""></a>
+                        </li>
+                        <li>
+                            <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://fankarte.tagesanzeiger.ch" target="_blank">&#xf082</a>
+                        </li>
+                        <li>
+                            <a class="twitter" href="https://twitter.com/home?status=GC-Hochburg oder abtrünnige FCB-Zelle? %E2%80%93 Welcher Club dominiert deine Gemeinde? http://fankarte.tagesanzeiger.ch via @tagesanzeiger" target="_blank">&#xf099</a>
+                        </li>
+                    </ul>
+                    <div class="navbar-header">
+                        <a class="navbar-brand logo" href=""></a>
+                    </div>
+                    <div class="navbar-title hidden-xs">
+                            Die Hochburgen der Schweizer Fussballfans
+                    </div>
+
                 </div>
-            </div>
-        </nav>
-    </header>
-    <!-- Impress -->
-    <div class="modal fade" id="impressum" tabindex="-1" role="dialog" aria-labelledby="impressum" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                        &times;
-                    </button>
-                    <h4 class="modal-title">
-                        Impressum
-                    </h4>
-                </div>
-                <div class="modal-body">
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td class="td-first">
-                                    Projektleitung
-                                </td>
-                                <td>
-                                    Samuel Reber
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="td-first">
-                                    Konzept und Programmierung
-                                </td>
-                                <td>
-                                    Timo Grossenbacher
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            </nav>
+        </header>
+        <!-- Info for our beloved ltie9 users -->
+        <div class="ie8-warning alert alert-danger alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">
+                &times;
+            </button>
+            <strong>
+                Achtung:
+            </strong>
+            Sie verwenden einen veralteten Browser, der moderne Webtechnologien nicht unterstützt. Wir bitten wir Sie deshalb, diese Website in einem Browser wie
+            <a href="http://getfirefox.com">
+        Mozilla Firefox
+      </a>
+            oder
+            <a href="http://www.google.com/chrome">
+        Google Chrome
+      </a>
+            zu starten.
         </div>
-        <!-- Impress End -->
-    </div>
+        <!-- Impress -->
+        <div class="modal fade" id="impressum" tabindex="-1" role="dialog" aria-labelledby="impressum" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                            &times;
+                        </button>
+                        <h4 class="modal-title">
+                            Über die Karte
+                        </h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Von Patrice Siegrist (<a class="twitter" href="https://twitter.com/daeumchendreher" target="_blank">@daeumchendreher</a>), Mario Stäuble (<a class="twitter" href="https://twitter.com/mario_staeuble" target="_blank">@mario_staeuble</a>), Julian Schmidli (<a class="twitter" href="https://twitter.com/julianschmidli" target="_blank">@julianschmidli</a>) und Timo Grossenbacher (<a class="twitter" href="https://twitter.com/wnstns" target="_blank">@wnstns</a>, Programmierung).</p>
+                        <p>Die Schweizer Fankarte basiert auf den Daten der Saisonkarten aller Schweizer Super-League-Clubs. Nicht dabei sind die Informationen des FC Sion (Datenschutzbedenken) und des FC Vaduz (registriert Wohnort der Abonnenten nicht). Dafür ist FC Lausanne-Sport präsent, der mittlerweile abgestiegen ist. Die Daten wurden zwischen März und April 2014 erhoben und sind ein Abbild der vergangenen Saison 2013/14. Die Farben repräsentieren den Club, der am meisten Saisonkarten in der jeweiligen Gemeinde abgesetzt hat. Die Farbintensität berücksichtigt die Einwohnerzahl der Gemeinde (je mehr Karten pro Einwohner, desto intensiver) sowie den prozentualen Anteil aller Saisonkarten des dominanten Vereins (je mehr Anteil, desto intensiver). Das Wallis und das Tessin wurden mangels Daten vollständig ausgeklammert.</p>
+                        <p>Einige Gemeinden teilen sich die Postleitzahlen. In diesen Fällen wurden die dazugehörigen Saisonkarten im Verhältnis der Einwohnerzahlen verteilt und gerundet. Das führt dazu, dass die Ergebnisse in Gemeinden mit nur einer Saisonkarte mit Vorsicht zu geniessen sind. Bei den Saisonkarten handelt es sich sowohl um die Karten von Privatpersonen als auch um jene von Firmen und Sponsoren. Eine kleine Anzahl von Saisonkarten konnten nicht verortet werden, da sie entweder ungenau identifizierbar waren oder sich die Wohnsitze im Ausland befanden.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Impress End -->
+        </div>
 
-    <!-- Map -->
-    <div id="map" class="col-xs-12">
-        <!-- Map End -->
-    </div>
+        <!-- Map -->
+        <div id="map" class="col-xs-12">
+            <!-- Map End -->
+        </div>
 
-    <!-- Footer -->
-    <footer>
-        <nav class="navbar navbar-default navbar-fixed-bottom map-tooltip">
-            <div class="col-xs-12 title">Anzahl verkaufte Saisonkarten pro Gemeinde (in Prozent)</div>
-            <div class="col-xs-12 gde">Fahren Sie über die Gemeinden, um Detailinfos zu erhalten.</div>
-            <div class="col-xs-6">
-                <div class="col-md-3 clubinfo fca">
-                    <span class="helper"></span>
-                    <span class="text"></span>
+        <!-- Footer -->
+        <footer>
+            <nav class="navbar navbar-default navbar-fixed-bottom map-tooltip">
+                <div class="container">
+                    <div class="col-xs-12 title">Anzahl verkaufte Saisonkarten pro Gemeinde (in Prozent)</div>
+                    <div class="col-xs-12 gde">Fahren Sie über die Gemeinden, um Detailinfos zu erhalten.</div>
+                    <div class="col-md-6">
+                        <div class="col-xs-4 clubinfo fca">
+                            <span class="helper"></span>
+                            <span class="text"></span>
+                        </div>
+                        <div class="col-xs-4 clubinfo fcb">
+                            <span class="helper"></span>
+                            <span class="text"></span>
+                        </div>
+                        <div class="col-xs-4 clubinfo fcl">
+                            <span class="helper"></span>
+                            <span class="text"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="col-xs-4 clubinfo fcsg">
+                            <span class="helper"></span>
+                            <span class="text"></span>
+                        </div>
+                        <div class="col-xs-4 clubinfo fct">
+                            <span class="helper"></span>
+                            <span class="text"></span>
+                        </div>
+                        <div class="col-xs-4 clubinfo fcz">
+                            <span class="helper"></span>
+                            <span class="text"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-12 lowest">
+                        <div class="col-xs-4 clubinfo yb">
+                            <span class="helper"></span>
+                            <span class="text"></span>
+                        </div>
+                        <div class="col-xs-4 clubinfo fcls">
+                            <span class="helper"></span>
+                            <span class="text"></span>
+                        </div>
+                        <div class="col-xs-4 clubinfo gcz">
+                            <span class="helper"></span>
+                            <span class="text"></span>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-3 clubinfo fcb">
-                    <span class="helper"></span>
-                    <span class="text"></span>
-                </div>
-                <div class="col-md-3 clubinfo fcl">
-                    <span class="helper"></span>
-                    <span class="text"></span>
-                </div>
-                <div class="col-md-3 clubinfo fcls">
-                    <span class="helper"></span>
-                    <span class="text"></span>
-                </div>
-            </div>
-            <div class="col-xs-6">
-                <div class="col-md-3 clubinfo fcsg">
-                    <span class="helper"></span>
-                    <span class="text"></span>
-                </div>
-                <div class="col-md-3 clubinfo fct">
-                    <span class="helper"></span>
-                    <span class="text"></span>
-                </div>
-                <div class="col-md-3 clubinfo fcz">
-                    <span class="helper"></span>
-                    <span class="text"></span>
-                </div>
-                <div class="col-md-3 clubinfo gcz">
-                    <span class="helper"></span>
-                    <span class="text"></span>
-                </div>
-            </div>
-            <div class="col-xs-12">
-                <div class="center-block clubinfo yb">
-                <span class="helper"></span>
-                <span class="text"></span>
-                </div>
-            </div>
-        </nav>
-        <!-- Footer End -->
-    </footer>
+            </nav>
+        </footer>
+    </div>
+    <!-- Size Detection for JS -->
+    <div class="device-xs visible-xs">
+    </div>
+    <div class="device-sm visible-sm">
+    </div>
+    <div class="device-md visible-md">
+    </div>
+    <div class="device-lg visible-lg">
+    </div>
 
     <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <!-- build:js scripts/vendor.js -->

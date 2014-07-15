@@ -71,7 +71,7 @@ newsnet.onDOMReady = function() {
     $('title').text($('title').text() + ' | ' + newsnet.sitetitle);
     // manipulate facebook open graph (og)
     $('meta#og_title').attr('content', $('meta#og_title').attr('content') + ' | ' + newsnet.sitetitle);
-    $('meta#og_url').attr('content', 'http://' + 'sfl-fussballfans' + '.' + newsnet.host + '.ch');
+    $('meta#og_url').attr('content', 'http://' + 'fankarte' + '.' + newsnet.host + '.ch');
 }
 /* 
  * The following actions need to be taken as soon as possible

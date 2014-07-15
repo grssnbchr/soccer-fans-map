@@ -186,7 +186,14 @@ module.exports = function (grunt) {
                         'styles/fonts/{,*/}*.*',
                         'bower_components/bootstrap/dist/fonts/*.*'
                     ]
-                }]
+                }, {
+		 dest: '<%= config.dist %>/img/',
+		 flatten: true,
+                 cwd: '<%= config.app %>',
+		 dot: true,
+		 expand: true,
+		 src: 'bower_components/cartodb.js/img/{,*/}*.*'
+		}]
             },
             styles: {
                 expand: true,
@@ -251,7 +258,7 @@ module.exports = function (grunt) {
        'copy:dist',
        'processhtml:dist',
        'modernizr',
-       'rev',
+       //'rev',
        'usemin'
        
     ]);

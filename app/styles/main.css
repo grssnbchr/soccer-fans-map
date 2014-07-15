@@ -31,6 +31,7 @@ svg:not(:root) {
  */
 
 .ie8-warning {
+    margin-top: 100px;
     display: none;
 }
 .lt-ie9 .ie8-warning {
@@ -202,6 +203,10 @@ body {
 #impressum h4 {
     font-family: 'Benton Sans Cond Black';
 }
+#impressum p {
+    text-align: justify;
+    font-family: 'Benton Sans Cond';
+}
 #impressum table.table td {
     border-bottom: none;
     padding-bottom: 15px;
@@ -209,15 +214,33 @@ body {
 #impressum .modal-header {
     border-bottom: none;
 }
+#impressum img {
+    display: block;
+    float: left;
+    width: 50%;
+    padding-right: 10px;
+    vertical-align: middle;
+    margin-bottom: 10px;
+}
+#impressum img.soz {
+    margin-top: 10px;
+}
+#impressum small {
+    display: block;
+    clear: both;
+    font-size: 12px;
+}
+#impressum p.smaller {
+    font-size: 15px;
+    text-align: left;
+}
+#impressum a.twitter {
+    /*font-family: 'Benton Sans Cond Black', sans-serif;*/
+}
 /**
  * CONTAINER
  */
 
-/* For some reason, some space is required here */
-
-body > .container {
-    padding-top: 80px;
-}
 /**
  * HEADINGS & LEAD
  */
@@ -248,6 +271,19 @@ table.table thead th {
     border-top: none;
     font-weight: normal;
     font-size: 17px;
+}
+/* second column should be right-aligned */
+
+table.table td + td, table.table td.right {
+    text-align: right;
+}
+table.table > tbody > tr > td {
+    border-bottom: 1px solid rgb(200, 200, 200);
+    padding-bottom: 3px;
+}
+table.table tfoot td {
+    border: none;
+    font-size: 13px;
 }
 /**
  * BTN STYLE OVERRIDE 
@@ -284,40 +320,61 @@ table.table thead th {
 }
 /** CartoDB Map */
 
-#map {
-    height: 100%;
-    padding: 0;
-    margin: 0;
-}
 .cartodb-popup-content-wrapper, .cartodb-popup-content {
     box-sizing: content-box;
     -webkit-box-sizing: content-box;
     -moz-box-sizing: content-box;
 }
-html, body, #map {
+html, body {
     height: 100%;
     padding: 0;
     margin: 0;
 }
-#map {
-    margin-top: 56px;
+.content {
+    position: relative;
+    height: inherit;
 }
+#map {
+    min-width: 100%;
+    width: 100%;
+    top: 50px;
+    bottom: 0;
+    position: absolute;
+    padding: 0;
+    cursor: pointer;
+}
+.navbar {
+    margin-bottom: 0px;
+}
+/*#map {
+    margin-top: 56px;
+}*/
+
 footer {
     font-family: 'Benton Sans Cond', sans-serif;
     text-align: center;
 }
 footer .navbar.map-tooltip {
-    height: 150px;
+    height: 110px;
+}
+#map {
+    margin-bottom: 110px;
 }
 @media screen and (min-width: 768px) {
     footer .navbar.map-tooltip {
-        height: 200px;
+        display: none;
+    }
+    #map {
+        margin-bottom: 0px;
     }
 }
 @media screen and (min-width: 992px) {
     footer .navbar.map-tooltip {
-        height: 130px;
-    }G
+        display: none;
+    }
+    #map {
+        margin-bottom: 0px;
+    }
 }
 footer .navbar {
     background-color: white;
@@ -330,8 +387,11 @@ footer .title {
 footer .gde {
     padding-bottom: 10px;
 }
+footer .gde strong {
+    font-family: 'Benton Sans Cond Black', sans-serif;
+}
 footer .clubinfo {
-    font-size: 14px;
+    font-size: 12px;
     height: 25px;
     vertical-align: middle;
 }
@@ -340,10 +400,26 @@ footer .clubinfo .helper {
     height: 100%;
     vertical-align: middle;
 }
+footer .clubinfo .text {
+    /*    position: relative;
+    left: -20px;*/
+}
 footer .clubinfo img {
     height: 80%;
     vertical-align: middle;
-    margin-right: 10px;
+    margin-right: 0px;
+    position: absolute;
+    left: 0px;
+}
+@media screen and (min-width: 992px) {
+    footer .lowest {
+        margin-left: 20%;
+        margin-right: 20%;
+        width: 60%;
+    }
+    footer .lowest .clubinfo {
+        width: 33%;
+    }
 }
 @media screen and (max-width: 768px) {
     footer .title {
@@ -357,10 +433,193 @@ footer .clubinfo img {
         font-size: 10px;
         height: 20px;
     }
-    footer .clubinfo .helper {
-
-    }
-    footer .clubinfo img {
+    footer .clubinfo .helper {} footer .clubinfo img {
         margin-right: 5px;
     }
+}
+/* SPINNER */
+
+#map .spinner {
+    left: 50%;
+    top: 30%;
+    margin-left: -41px;
+    position: absolute;
+    text-align: center;
+    font-family: 'Benton Sans Cond', sans-serif;
+    font-size: 14px;
+}
+#map .spinner i {
+    font-size: 30px;
+}
+/* LEGEND & SEARCH BOX */
+
+@media screen and (min-width: 768px) {
+    div.cartodb-legend-stack {
+        left: 20px;
+        right: auto;
+        bottom: 40px;
+    }
+}
+div.cartodb-legend.custom ul li {
+    font-family: 'Benton Sans Cond', sans-serif;
+    text-transform: capitalize;
+    font-weight: normal;
+    font-size: 14px;
+}
+div.cartodb-legend .legend-title {
+    font-family: 'Benton Sans Cond', sans-serif;
+    text-transform: capitalize;
+    font-weight: normal;
+    font-size: 16px;
+}
+div.cartodb-legend.custom ul li .bullet, div.cartodb-legend.category ul li .bullet, div.cartodb-legend.color ul li .bullet {
+    width: 8px;
+    height: 8px;
+}
+#map .cartodb-searchbox {
+    width: 220px;
+    position: absolute;
+    bottom: 50px;
+}
+#map .cartodb-searchbox input {
+    font-family: 'Benton Sans Cond', sans-serif;
+}
+#map .cartodb-searchbox input[type='text'] {
+    width: 180px;
+}
+@media screen and (max-width: 768px) {
+    #map .cartodb-searchbox {
+        width: 180px;
+        top: 20px;
+        margin: 0px;
+        right: 20px;
+    }
+    #map .cartodb-searchbox input[type='text'] {
+        width: 140px;
+    }
+}
+/* PANEL */
+
+#map .panel.panel-default {
+    font-family: 'Benton Sans Cond', sans-serif;
+    font-size: 16px;
+    width: 250px;
+    height: 580px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    border: 1px solid #999;
+    background: none repeat scroll 0% 0% #FFF;
+    z-index: 5;
+    text-align: left;
+}
+#map .panel.panel-default strong {
+    font-family: 'Benton Sans Cond Black';
+    font-weight: normal;
+}
+@media screen and (max-width: 768px) {
+    #teamSelector {
+        font-family: 'Benton Sans Cond', sans-serif;
+        position: absolute;
+        top: 55px;
+        right: 20px;
+        z-index: 100;
+        width: 180px;
+        font-size: 14px;
+        padding: 3px;
+        background-color: white;
+        box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
+        border-radius: 4px;
+        border: 1px solid #999;
+    }
+}
+#map .panel.panel-default #teamSelector {
+    position: absolute;
+    bottom: 10px;
+    width: 220px;
+    height: 28px;
+    padding: 3px;
+    font-size: 14px;
+}
+#map .panel.panel-default img {
+    height: 80px;
+    width: auto;
+    margin-left: auto;
+}
+#map .panel.panel-default .table {
+    font-size: 13px;
+}
+#map .panel.panel-default table.table, table.table thead th {
+    font-size: 13px;
+}
+#map .panel.panel-default table.table tfoot td {
+    font-size: 11px;
+}
+@media screen and (min-width: 768px) {
+    #map .panel .cartodb-searchbox {
+        box-shadow: none;
+    }
+}
+/* ATTRIBUTION */
+
+div#cartodb-gmaps-attribution {
+    display: none;
+}
+/* TOOLTIP */
+
+#map-tooltip {
+    position: absolute;
+    display: none;
+    height: auto;
+    width: 180px;
+    z-index: 200;
+    font-size: 12px;
+    padding: 5px;
+    background-color: white;
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    border: 1px solid #999;
+    font-family: 'Benton Sans Cond', sans-serif;
+}
+#map-tooltip strong {
+    font-family: 'Benton Sans Cond Black', sans-serif;
+    font-size: 14px;
+}
+#map-tooltip table.table {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+#map-tooltip table.table tr td {
+    border: none;
+    padding: 0px;
+    padding-top: 3px;
+}
+#map-tooltip img {
+    height: 15px;
+    width: auto;
+    float: left;
+    margin-right: 5px;
+}
+#map-tooltip .closeme {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    color: black;
+    cursor: pointer;
+}
+/* NAVBAR TITLE */
+
+.navbar-title {
+    position: absolute;
+    left: 50%;
+    margin-left: -172px;
+    margin-top: 16px;
+    font-size: 20px;
+    font-family: 'Benton Sans Cond', sans-serif;
+}
+.navbar-title a, .navbar-title a:hover, .navbar-title a:active {
+    color: inherit;
+    font-size: 20px;
 }
