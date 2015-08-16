@@ -22,7 +22,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta id="og_title" property="og:title" content="Fankarte">
     <meta id="og_url" property="og:url" content="">
-    <meta id="og_image" property="og:image" content="images/og-image.png">
+    <meta id="og_image" property="og:image" content="images/og_image.png">
 
 
     <link id="favicon" rel="shortcut icon" href="" type="image/x-icon">
@@ -123,8 +123,10 @@
                     </div>
                     <div class="modal-body">
                         <p>Von Patrice Siegrist (<a class="twitter" href="https://twitter.com/daeumchendreher" target="_blank">@daeumchendreher</a>), Mario Stäuble (<a class="twitter" href="https://twitter.com/mario_staeuble" target="_blank">@mario_staeuble</a>), Julian Schmidli (<a class="twitter" href="https://twitter.com/julianschmidli" target="_blank">@julianschmidli</a>) und Timo Grossenbacher (<a class="twitter" href="https://twitter.com/wnstns" target="_blank">@wnstns</a>, Programmierung).</p>
-                        <p>Die Schweizer Fankarte basiert auf den Daten der Saisonkarten aller Schweizer Super-League-Clubs. Nicht dabei sind die Informationen des FC Sion (Datenschutzbedenken) und des FC Vaduz (registriert Wohnort der Abonnenten nicht). Dafür ist FC Lausanne-Sport präsent, der mittlerweile abgestiegen ist. Die Daten wurden zwischen März und April 2014 erhoben und sind ein Abbild der vergangenen Saison 2013/14. Die Farben repräsentieren den Club, der am meisten Saisonkarten in der jeweiligen Gemeinde abgesetzt hat. Die Farbintensität berücksichtigt die Einwohnerzahl der Gemeinde (je mehr Karten pro Einwohner, desto intensiver) sowie den prozentualen Anteil aller Saisonkarten des dominanten Vereins (je mehr Anteil, desto intensiver). Das Wallis und das Tessin wurden mangels Daten vollständig ausgeklammert.</p>
-                        <p>Einige Gemeinden teilen sich die Postleitzahlen. In diesen Fällen wurden die dazugehörigen Saisonkarten im Verhältnis der Einwohnerzahlen verteilt und gerundet. Das führt dazu, dass die Ergebnisse in Gemeinden mit nur einer Saisonkarte mit Vorsicht zu geniessen sind. Bei den Saisonkarten handelt es sich sowohl um die Karten von Privatpersonen als auch um jene von Firmen und Sponsoren. Eine kleine Anzahl von Saisonkarten konnten nicht verortet werden, da sie entweder ungenau identifizierbar waren oder sich die Wohnsitze im Ausland befanden.</p>
+                        <p>Die Schweizer Fankarte basiert auf den Daten der Saisonkarten aller Schweizer Super-League-Clubs. Die Daten wurden von den jeweiligen Clubs in anonymisierter Form angeliefert und lassen keine Rückschlüsse auf Einzelpersonen zu. Nicht dabei sind die Informationen des FC Sion (Datenschutzbedenken) und des FC Vaduz (registriert Wohnort der Abonnenten nicht). Dafür ist FC Lausanne-Sport präsent, der mittlerweile abgestiegen ist. Die Daten wurden zwischen März und Mai 2014 erhoben und sind ein Abbild der vergangenen Saison 2013/14. Die Farben repräsentieren den Club, der am meisten Saisonkarten in der jeweiligen Gemeinde abgesetzt hat. Die Farbintensität berücksichtigt die Einwohnerzahl der Gemeinde (je mehr Karten pro Einwohner, desto intensiver) sowie den prozentualen Anteil aller Saisonkarten des dominanten Vereins (je mehr Anteil, desto intensiver). Das Wallis und das Tessin wurden mangels Daten vollständig ausgeklammert.</p>
+                        <p>Einige Gemeinden teilen sich die Postleitzahlen. In diesen Fällen wurden die dazugehörigen Saisonkarten im Verhältnis der Einwohnerzahlen verteilt und gerundet. Das führt dazu, dass die Ergebnisse in Gemeinden mit nur einer Saisonkarte mit Vorsicht zu geniessen sind. Bei den Saisonkarten handelt es sich sowohl um die Karten von Privatpersonen als auch um jene von Firmen und Sponsoren. Eine kleine Anzahl von Saisonkarten konnten nicht verortet werden, da sie entweder ungenau identifizierbar waren oder sich die Wohnsitze im Ausland befanden. Sonderfall: YB erfasst nicht die Ortsdaten jedes einzelnen Abo-Inhabers, sondern die Daten jedes Kunden. Das ist nicht dasselbe: Wenn ein Kunde zwei Karten kauft, erscheint er auf der Karte lediglich einmal.</p>
+                        <p class="special">Detail-Methodik für die Einfärbung der Gemeinden: Berechnet wurde für jede Gemeinde die Anzahl Karten pro Einwohner und pro Club. Danach wurde diese Zahl mit dem jeweiligen prozentualen Anteil des Clubs multizipliert. Die Farbintensität (Transparenz) basiert auf 5 Quantilen des Wertebereichs dieses Produkts. Je intensiver (weniger transparent), desto mehr Karten pro Einwohner und desto grösser der Anteil an allen Karten pro Gemeinde. In der Gesamtübersicht ("Alle Clubs") wird jeweils nur der Club mit den meisten Karten angezeigt.</p>
+                        </p><p>Bei Fragen oder Bedenken zur Sicherheit von Einzelpersonen schreiben Sie an: <a href="mailto:datenblog@tamedia.ch">datenblog@tamedia.ch</a></p>
                     </div>
                 </div>
             </div>
@@ -198,7 +200,7 @@
     <div class="device-lg visible-lg">
     </div>
 
-    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBijoW2az04Ab8f9KLt4EZBCdVn91rBXHg&sensor=false"></script>
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/jquery.js">

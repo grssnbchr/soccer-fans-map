@@ -152,10 +152,16 @@ body {
  * NAVBAR: SOCIAL MEDIA ICONS
  */
 
+
 .nav.navbar-nav.navbar-right .impressum-link {
     font-family: 'Benton Sans Cond';
     font-size: 17px;
     padding-right: 15px;
+}
+@media screen and (max-width: 400px) {
+    .nav.navbar-nav.navbar-right .impressum-link {
+        font-size: 12px;
+    }
 }
 .nav.navbar-nav.navbar-right {
     float: right;
@@ -233,6 +239,10 @@ body {
 #impressum p.smaller {
     font-size: 15px;
     text-align: left;
+}
+#impressum p.special {
+    background-color: #e6e6e6;
+    padding: 10px;
 }
 #impressum a.twitter {
     /*font-family: 'Benton Sans Cond Black', sans-serif;*/

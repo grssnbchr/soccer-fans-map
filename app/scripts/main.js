@@ -74,7 +74,7 @@ clubs['fcls'] = {};
 clubs['fcls'].css = '#fussballfans_merge { polygon-opacity: 0; line-color: #FFFFFF; line-width: 0.5; line-opacity: 1; polygon-fill: #b0764e; } #fussballfans_merge [ dom2_fcls <= 15.3846153846154] { polygon-opacity: 0.9; } #fussballfans_merge [ dom2_fcls <= 3.76647834375] { polygon-opacity: 0.8; } #fussballfans_merge [ dom2_fcls <= 2.64536739726004] { polygon-opacity: 0.6; } #fussballfans_merge [ dom2_fcls <= 1.33689839572193] { polygon-opacity: 0.4; } #fussballfans_merge [ dom2_fcls <= 0.617516895927602] { polygon-opacity: 0.2; } #fussballfans_merge [ dom2_fcls = 0] { polygon-opacity: 0;} #fussballfans_merge[best="keine"] { polygon-opacity: 0; }';
 
 clubs['fcsg'] = {};
-clubs['fcsg'].css = '#fussballfans_merge { polygon-opacity: 0; line-color: #FFFFFF; line-width: 0.5; line-opacity: 1; polygon-fill: #4ab969; } #fussballfans_merge [ dom2_fcsg <= 34.5528455284553] { polygon-opacity: 0.9;} #fussballfans_merge [ dom2_fcsg <= 5.21388790141012] { polygon-opacity: 0.8;} #fussballfans_merge [ dom2_fcsg <= 1.64473684210526] { polygon-opacity: 0.6;} #fussballfans_merge [ dom2_fcsg <= 0.290613193839] { polygon-opacity: 0.4;} #fussballfans_merge [ dom2_fcsg <= 0.0241756116429746] { polygon-opacity: 0.2; } #fussballfans_merge [ dom2_fcsg = 0] { polygon-opacity: 0;} #fussballfans_merge[best="keine"] { polygon-opacity: 0; }';
+clubs['fcsg'].css = '#fussballfans_merge { polygon-opacity: 0; line-color: #FFFFFF; line-width: 0.5; line-opacity: 1; polygon-fill: #4ab969; } #fussballfans_merge [ dom2_fcsg <= 52.09953345] { polygon-opacity: 0.9;} #fussballfans_merge [ dom2_fcsg <= 5.21388790141012] { polygon-opacity: 0.8;} #fussballfans_merge [ dom2_fcsg <= 1.64473684210526] { polygon-opacity: 0.6;} #fussballfans_merge [ dom2_fcsg <= 0.290613193839] { polygon-opacity: 0.4;} #fussballfans_merge [ dom2_fcsg <= 0.0241756116429746] { polygon-opacity: 0.2; } #fussballfans_merge [ dom2_fcsg = 0] { polygon-opacity: 0;} #fussballfans_merge[best="keine"] { polygon-opacity: 0; }';
 
 clubs['fct'] = {};
 clubs['fct'].css = '#fussballfans_merge { polygon-opacity: 0; line-color: #FFFFFF; line-width: 0.5; line-opacity: 1; polygon-fill: #f49ac1; } #fussballfans_merge [ dom2_fct <= 28.8770053475936] { polygon-opacity: 0.9;} #fussballfans_merge [ dom2_fct <= 2.34082396990741] { polygon-opacity: 0.8;} #fussballfans_merge [ dom2_fct <= 0.565667836879433] { polygon-opacity: 0.6;} #fussballfans_merge [ dom2_fct <= 0.100918357076609] { polygon-opacity: 0.4;} #fussballfans_merge [ dom2_fct <= 0.00978703413717506] { polygon-opacity: 0.2;} #fussballfans_merge [ dom2_fct = 0] { polygon-opacity: 0;} #fussballfans_merge[best="keine"] { polygon-opacity: 0; }';
@@ -218,6 +218,7 @@ window.defaultTable = '<table class="table"> <thead> <tr> <th colspan="2"> {{n}}
  * Initializes the application
  * Runs as soon as the DOM is ready
  */
+
 $(function() {
     // Newsnet initialization
     newsnet.onDOMReady();
@@ -232,7 +233,7 @@ $(function() {
     $(window).on('dataLoaded', initializeUi);
 
     $(window).on('teamChanged', updateUi);
-    $(window).on('teamChanged', function(){
+    $(window).on('teamChanged', function() {
         newsnet.generatePI();
         server.trackGAPageview();
     });
@@ -245,9 +246,9 @@ var loadData = function() {
     var sql = new cartodb.SQL({
         user: 'wnstnsmth'
     });
-    var overallDataPromise = sql.execute("SELECT cartodb_id,fca,fcb,fcls,fcl,fcsg,fct,fcz,gcz,yb,name,total,kt,einwohner FROM fussballfans_merge where kt is not null and kt != 'VS' and kt != 'FL' and kt != 'TI'");
+    var overallDataPromise = sql.execute("SELECT cartodb_id,fca,fcb,fcls,fcl,fcsg,fct,fcz,gcz,yb,name,total,kt,einwohner FROM sg_2014_07_fussballfans_merge_v2 where kt is not null and kt != 'VS' and kt != 'FL' and kt != 'TI'");
 
-    var teamDataPromise = sql.execute("SELECT ct,gj,mt,mw,n,sk,stgr,team,zs FROM vereine ORDER by team ASC");
+    var teamDataPromise = sql.execute("SELECT ct,gj,mt,mw,n,sk,stgr,team,zs FROM s_2014_07_vereine ORDER by team ASC");
 
     // CartoDB promises need to be transformed
     var jQueryPromise1 = $.Deferred();
@@ -296,7 +297,7 @@ var initializeMap = function() {
             center_lat: 47,
             center_lon: 8.5,
             zoom: (isMobile ? 7 : 9),
-            cartodb_logo: false
+            cartodb_logo: true
         })
         .done(function(vis, layers) {
 
@@ -325,9 +326,8 @@ var initializeMap = function() {
             // layers[1].setOpacity(0.2);
             // save original map css
             clubs['all'].css = layers[1].getSubLayer(0).getCartoCSS();
-            // layers[1].getSubLayer(0).setCartoCSS('');
-            // custom google map styles
 
+            // custom google map styles
             vis.getNativeMap().setOptions(gmapstyles);
             // layers[1].getSubLayer(0).setCartoCSS(clubs['fcl'].css);
             window.overlays = vis.getOverlays();
@@ -415,9 +415,7 @@ var initializeUi = function() {
     });
     var panelBody = $('<div>', {
         'class': 'panel-body',
-        'html': window.defaultText + '<p><a href="#" data-toggle="modal" data-target="#impressum" class="impressum-link">
-                                Über die Karte.
-                        </a></p>'
+        'html': window.defaultText + '<p><a href="#" data-toggle="modal" data-target="#impressum" class="impressum-link">Über die Karte.</a></p>'
     });
     panel.append(panelBody);
     panelBody.append(teamSelector);
@@ -446,7 +444,7 @@ var updateUi = function() {
         $('a.toggle').show(); // mobile legend
         if (!isMobile) {
             // populate panel
-            $('#ui .panel-body').prepend($(window.defaultText));
+            $('#ui .panel-body').prepend($(window.defaultText + '<p><a href="#" data-toggle="modal" data-target="#impressum" class="impressum-link">Über die Karte.</a></p>'));
         }
     } else {
         // hide legend
@@ -484,11 +482,6 @@ var showMuniPopup = function(pos, id) {
         return;
     }
     $('#map-tooltip').html('<strong>' + result[0]['name'] + ' (Kt. ' + result[0]['kt'] + ')</strong><br>' + $.number(result[0]['einwohner']).replace(',', '\'') + ' Einwohner');
-    /*$('footer .clubinfo').each(function(index, item) {
-        // get class 
-        var team = $(item).attr('class').split(/\s+/)[2];
-        $(item).find('.text').text(result[0][team] + ' (' + $.number(result[0][team] / result[0]['total'] * 100, 1) + '%)');
-    });*/
     // sort
     var teamsToSort = [];
     $.each(window.teamData, function(index, item) {
@@ -541,10 +534,10 @@ var showMuniPopup = function(pos, id) {
     });
     $('#map-tooltip').append(table);
     var closeButton = $('<div>', {
-        'class':'closeme', 
+        'class': 'closeme',
         'text': 'X',
         'on': {
-            'click': function(){
+            'click': function() {
                 $('#map-tooltip').hide();
             }
         }
